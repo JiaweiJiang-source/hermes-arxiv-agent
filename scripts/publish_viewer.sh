@@ -2,6 +2,8 @@
 set -euo pipefail
 
 PROJECT_DIR="${PROJECT_DIR:-$(cd "$(dirname "$0")/.." && pwd)}"
+# Use the dedicated GitHub SSH key
+export GIT_SSH_COMMAND="ssh -i ~/.ssh/id_rsa_forgithub"
 DATE_TAG="${DATE_TAG:-$(date +%F)}"
 PUSH_MAX_ATTEMPTS="${PUSH_MAX_ATTEMPTS:-5}"
 PUSH_RETRY_DELAY="${PUSH_RETRY_DELAY:-10}"
